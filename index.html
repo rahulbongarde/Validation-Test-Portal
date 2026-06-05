@@ -1,111 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UCAL Validation Test Portal</title>
-
-<style>
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f4f6f9;
-}
-
-.header{
-    background:#002060;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-.header img{
-    width:120px;
-}
-
-.container{
-    width:90%;
-    margin:auto;
-    padding:20px;
-}
-
-.search-box{
-    width:100%;
-    padding:12px;
-    margin-bottom:20px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-size:16px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-}
-
-th{
-    background:#0d6efd;
-    color:white;
-    padding:12px;
-}
-
-td{
-    padding:12px;
-    border:1px solid #ddd;
-    text-align:center;
-}
-
-.pass{
-    color:green;
-    font-weight:bold;
-}
-
-.download-btn{
-    background:#198754;
-    color:white;
-    padding:8px 15px;
-    text-decoration:none;
-    border-radius:5px;
-}
-
-.footer{
-    background:#002060;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:20px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-    <img src="logo.png" alt="UCAL Logo">
-    <h1>UCAL Electronics Pvt. Ltd., Pune</h1>
-    <h2>Validation Test Portal</h2>
-</div>
-
-<div class="container">
-
-<input type="text"
-id="searchInput"
-class="search-box"
-placeholder="Search Report..."
-onkeyup="searchReport()">
-
-<table id="reportTable">
-<thead>
-<tr>
-<th>Report Name</th>
-<th>Report No</th>
-<th>Date</th>
-<th>Status</th>
-<th>Download</th>
-</tr>
-</thead>
-
 <tbody>
 
 <tr>
@@ -113,12 +5,7 @@ onkeyup="searchReport()">
 <td>R&D/AL/24VF/VAL/26/002</td>
 <td>16-04-2026</td>
 <td class="pass">PASS</td>
-<td>
-<a class="download-btn"
-href="Reports/Endurance_Test.pdf">
-Download
-</a>
-</td>
+<td><a class="download-btn" href="1.Endurance test..pdf" target="_blank">Download</a></td>
 </tr>
 
 <tr>
@@ -126,12 +13,7 @@ Download
 <td>R&D/AL/24VF/VAL/26/003</td>
 <td>17-04-2026</td>
 <td class="pass">PASS</td>
-<td>
-<a class="download-btn"
-href="Reports/Operating_Voltage_Test.pdf">
-Download
-</a>
-</td>
+<td><a class="download-btn" href="2.OPERATING VOLTAGE TEST.pdf" target="_blank">Download</a></td>
 </tr>
 
 <tr>
@@ -139,42 +21,55 @@ Download
 <td>R&D/AL/24VF/VAL/26/004</td>
 <td>25-04-2026</td>
 <td class="pass">PASS</td>
-<td>
-<a class="download-btn"
-href="Reports/Vibration_Test.pdf">
-Download
-</a>
-</td>
+<td><a class="download-btn" href="3.Vibration Test.pdf" target="_blank">Download</a></td>
+</tr>
+
+<tr>
+<td>High Temperature Operating Test</td>
+<td>VAL-005</td>
+<td>26-04-2026</td>
+<td class="pass">PASS</td>
+<td><a class="download-btn" href="4.High Temperature Operating test .pdf" target="_blank">Download</a></td>
+</tr>
+
+<tr>
+<td>Low Temperature Operating Test</td>
+<td>VAL-006</td>
+<td>27-04-2026</td>
+<td class="pass">PASS</td>
+<td><a class="download-btn" href="5.Low Temperature Operating test.pdf" target="_blank">Download</a></td>
+</tr>
+
+<tr>
+<td>Temperature & Humidity Test</td>
+<td>VAL-007</td>
+<td>28-04-2026</td>
+<td class="pass">PASS</td>
+<td><a class="download-btn" href="6.Temperature and Humidity Test .pdf" target="_blank">Download</a></td>
+</tr>
+
+<tr>
+<td>Over Voltage Test</td>
+<td>VAL-008</td>
+<td>29-04-2026</td>
+<td class="pass">PASS</td>
+<td><a class="download-btn" href="7.OVER VOLTAGE TEST.pdf" target="_blank">Download</a></td>
+</tr>
+
+<tr>
+<td>Reversed Voltage Test</td>
+<td>VAL-009</td>
+<td>30-04-2026</td>
+<td class="pass">PASS</td>
+<td><a class="download-btn" href="8.REVERSED VOLTAGE TEST.pdf" target="_blank">Download</a></td>
+</tr>
+
+<tr>
+<td>Drop Test</td>
+<td>VAL-010</td>
+<td>01-05-2026</td>
+<td class="pass">PASS</td>
+<td><a class="download-btn" href="9.Drop Test.pdf" target="_blank">Download</a></td>
 </tr>
 
 </tbody>
-</table>
-
-</div>
-
-<div class="footer">
-© 2026 UCAL Electronics Pvt. Ltd. | Validation Department
-</div>
-
-<script>
-function searchReport() {
-    let input = document.getElementById("searchInput");
-    let filter = input.value.toUpperCase();
-    let table = document.getElementById("reportTable");
-    let tr = table.getElementsByTagName("tr");
-
-    for (let i = 0; i < tr.length; i++) {
-        let td = tr[i].getElementsByTagName("td")[0];
-
-        if (td) {
-            let txtValue = td.textContent || td.innerText;
-            tr[i].style.display =
-            txtValue.toUpperCase().indexOf(filter) > -1
-            ? "" : "none";
-        }
-    }
-}
-</script>
-
-</body>
-</html>
